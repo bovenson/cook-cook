@@ -86,6 +86,8 @@ extern "C" {
 #include <sparsehash/dense_hash_map>
 #include <sparsehash/sparse_hash_map>
 #include <nark/easy_use_hash_map.hpp>
+#include <nark/fstring.cpp>
+#include "nark/gold_hash_map.hpp"
 
 using std::map;
 using std::swap;
@@ -136,6 +138,14 @@ class EasyUseDenseHashMap : public dense_hash_map<K,V,H> {
   }
 };
 
+template<typename K, typename V, typename H>
+class EasyUseNarkMap : public nark::gold_hash_map<K,V,H> {
+ public:
+  EasyUseNarkMap() { }
+  void resize(size_t) { }   // map<> doesn't support resize
+};
+
+
 // For pointers, we only set the empty key.
 template<typename K, typename V, typename H>
 class EasyUseSparseHashMap<K*, V, H> : public sparse_hash_map<K*,V,H> {
@@ -149,6 +159,13 @@ class EasyUseDenseHashMap<K*, V, H> : public dense_hash_map<K*,V,H> {
   EasyUseDenseHashMap() {
     this->set_empty_key((K*)(~0));
   }
+};
+
+template<typename K, typename V, typename H>
+class EasyUseNarkMap<K*, V, H> : public nark::gold_hash_map<K*,V,H> {
+ public:
+  EasyUseNarkMap() { }
+  void resize(size_t) { }   // map<> doesn't support resize
 };
 
 #if defined(HAVE_UNORDERED_MAP)
@@ -177,13 +194,6 @@ class EasyUseMap : public map<K,V> {
  public:
   void resize(size_t) { }   // map<> doesn't support resize
 };
-
-template<typename K, typename V>
-class EasyUseNarkMap : public nark::easy_use_hash_map<K,V> {
- public:
-  void resize(size_t) { }   // map<> doesn't support resize
-};
-
 
 
 // Returns the number of hashes that have been done since the last
@@ -708,9 +718,9 @@ static void test_all_maps(int obj_size, int iters) {
                  EasyUseMap<ObjType*, int> >(
         "STANDARD MAP", obj_size, iters, false);
 
-    measure_map< EasyUseNarkMap<ObjType, int>,
-                 EasyUseNarkMap<ObjType*, int> >(
-        "NARK MAP", obj_size, iters, false);
+  measure_map< EasyUseNarkMap<ObjType, int, HashFn>,
+                EasyUseNarkMap<ObjType*, int, HashFn> >(
+      "NARK MAP", obj_size, iters, stress_hash_function);
 }
 
 int main(int argc, char** argv) {

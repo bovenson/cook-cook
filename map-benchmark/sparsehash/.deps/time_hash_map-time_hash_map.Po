@@ -76,8 +76,6 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_mode_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/string.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_rsize_t.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_errno_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/time.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_clock_t.h \
@@ -113,13 +111,13 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstddef \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include/stddef.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include/__stddef_max_align_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__nullptr \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/typeinfo \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/exception \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdlib \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdint \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/new \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base_03 \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/initializer_list \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__debug \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory \
@@ -130,9 +128,9 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/tuple \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdexcept \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstring \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/atomic \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_03 \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/unordered_map \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__hash_table \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cmath \
@@ -172,6 +170,8 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_key_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_nlink_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_useconds_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_rsize_t.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_errno_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_pthread/_pthread_cond_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h \
@@ -332,29 +332,17 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /usr/local/include/boost/type_traits/remove_extent.hpp \
   /usr/local/include/boost/type_traits/declval.hpp \
   /usr/local/include/boost/type_traits/is_complete.hpp \
-  /usr/local/include/boost/type_traits/detail/common_type_impl.hpp \
-  /usr/local/include/boost/type_traits/detail/common_arithmetic_type.hpp \
-  /usr/local/include/boost/type_traits/detail/composite_pointer_type.hpp \
+  /usr/local/include/boost/type_traits/detail/mp_defer.hpp \
   /usr/local/include/boost/type_traits/copy_cv.hpp \
   /usr/local/include/boost/type_traits/is_const.hpp \
   /usr/local/include/boost/type_traits/is_volatile.hpp \
-  /usr/local/include/boost/type_traits/is_same.hpp \
-  /usr/local/include/boost/type_traits/is_base_of.hpp \
-  /usr/local/include/boost/type_traits/is_base_and_derived.hpp \
-  /usr/local/include/boost/type_traits/is_class.hpp \
-  /usr/local/include/boost/type_traits/detail/composite_member_pointer_type.hpp \
-  /usr/local/include/boost/type_traits/remove_pointer.hpp \
-  /usr/local/include/boost/type_traits/type_identity.hpp \
-  /usr/local/include/boost/type_traits/is_union.hpp \
-  /usr/local/include/boost/type_traits/is_convertible.hpp \
   /usr/local/include/boost/type_traits/extent.hpp \
   /usr/local/include/boost/type_traits/floating_point_promotion.hpp \
   /usr/local/include/boost/type_traits/function_traits.hpp \
   /usr/local/include/boost/type_traits/has_bit_and.hpp \
   /usr/local/include/boost/type_traits/detail/has_binary_operator.hpp \
-  /usr/local/include/boost/type_traits/detail/yes_no_type.hpp \
-  /usr/local/include/boost/type_traits/is_fundamental.hpp \
-  /usr/local/include/boost/type_traits/detail/is_likely_lambda.hpp \
+  /usr/local/include/boost/type_traits/make_void.hpp \
+  /usr/local/include/boost/type_traits/is_convertible.hpp \
   /usr/local/include/boost/type_traits/has_bit_and_assign.hpp \
   /usr/local/include/boost/type_traits/has_bit_or.hpp \
   /usr/local/include/boost/type_traits/has_bit_or_assign.hpp \
@@ -362,6 +350,10 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /usr/local/include/boost/type_traits/has_bit_xor_assign.hpp \
   /usr/local/include/boost/type_traits/has_complement.hpp \
   /usr/local/include/boost/type_traits/detail/has_prefix_operator.hpp \
+  /usr/local/include/boost/type_traits/detail/yes_no_type.hpp \
+  /usr/local/include/boost/type_traits/is_fundamental.hpp \
+  /usr/local/include/boost/type_traits/is_same.hpp \
+  /usr/local/include/boost/type_traits/remove_pointer.hpp \
   /usr/local/include/boost/type_traits/has_dereference.hpp \
   /usr/local/include/boost/type_traits/has_divides.hpp \
   /usr/local/include/boost/type_traits/has_divides_assign.hpp \
@@ -386,16 +378,14 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /usr/local/include/boost/type_traits/has_not_equal_to.hpp \
   /usr/local/include/boost/type_traits/has_nothrow_assign.hpp \
   /usr/local/include/boost/type_traits/is_assignable.hpp \
-  /usr/local/include/boost/type_traits/has_trivial_assign.hpp \
   /usr/local/include/boost/type_traits/has_nothrow_constructor.hpp \
   /usr/local/include/boost/type_traits/is_default_constructible.hpp \
   /usr/local/include/boost/type_traits/has_nothrow_copy.hpp \
   /usr/local/include/boost/type_traits/is_copy_constructible.hpp \
-  /usr/local/include/boost/noncopyable.hpp \
-  /usr/local/include/boost/core/noncopyable.hpp \
+  /usr/local/include/boost/type_traits/is_constructible.hpp \
+  /usr/local/include/boost/type_traits/is_destructible.hpp \
   /usr/local/include/boost/type_traits/has_nothrow_destructor.hpp \
   /usr/local/include/boost/type_traits/has_trivial_destructor.hpp \
-  /usr/local/include/boost/type_traits/is_destructible.hpp \
   /usr/local/include/boost/type_traits/has_plus.hpp \
   /usr/local/include/boost/type_traits/has_plus_assign.hpp \
   /usr/local/include/boost/type_traits/has_post_decrement.hpp \
@@ -405,6 +395,7 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /usr/local/include/boost/type_traits/has_pre_increment.hpp \
   /usr/local/include/boost/type_traits/has_right_shift.hpp \
   /usr/local/include/boost/type_traits/has_right_shift_assign.hpp \
+  /usr/local/include/boost/type_traits/has_trivial_assign.hpp \
   /usr/local/include/boost/type_traits/has_trivial_constructor.hpp \
   /usr/local/include/boost/type_traits/has_trivial_copy.hpp \
   /usr/local/include/boost/type_traits/has_trivial_move_assign.hpp \
@@ -413,6 +404,9 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /usr/local/include/boost/type_traits/has_unary_plus.hpp \
   /usr/local/include/boost/type_traits/has_virtual_destructor.hpp \
   /usr/local/include/boost/type_traits/is_abstract.hpp \
+  /usr/local/include/boost/type_traits/is_base_and_derived.hpp \
+  /usr/local/include/boost/type_traits/is_base_of.hpp \
+  /usr/local/include/boost/type_traits/is_class.hpp \
   /usr/local/include/boost/type_traits/is_complex.hpp \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/complex \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/sstream \
@@ -468,8 +462,9 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/bitset \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/istream \
   /usr/local/include/boost/type_traits/is_compound.hpp \
-  /usr/local/include/boost/type_traits/is_constructible.hpp \
   /usr/local/include/boost/type_traits/is_copy_assignable.hpp \
+  /usr/local/include/boost/noncopyable.hpp \
+  /usr/local/include/boost/core/noncopyable.hpp \
   /usr/local/include/boost/type_traits/is_empty.hpp \
   /usr/local/include/boost/type_traits/is_final.hpp \
   /usr/local/include/boost/type_traits/is_float.hpp \
@@ -484,16 +479,17 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   /usr/local/include/boost/type_traits/is_polymorphic.hpp \
   /usr/local/include/boost/type_traits/is_signed.hpp \
   /usr/local/include/boost/type_traits/is_stateless.hpp \
+  /usr/local/include/boost/type_traits/is_union.hpp \
   /usr/local/include/boost/type_traits/is_unsigned.hpp \
   /usr/local/include/boost/type_traits/is_virtual_base_of.hpp \
   /usr/local/include/boost/type_traits/make_signed.hpp \
   /usr/local/include/boost/type_traits/make_unsigned.hpp \
-  /usr/local/include/boost/type_traits/make_void.hpp \
   /usr/local/include/boost/type_traits/rank.hpp \
   /usr/local/include/boost/type_traits/remove_all_extents.hpp \
   /usr/local/include/boost/type_traits/remove_const.hpp \
   /usr/local/include/boost/type_traits/remove_cv_ref.hpp \
   /usr/local/include/boost/type_traits/remove_volatile.hpp \
+  /usr/local/include/boost/type_traits/type_identity.hpp \
   /usr/local/include/boost/type_traits/integral_promotion.hpp \
   /usr/local/include/boost/type_traits/promote.hpp \
   /usr/local/include/boost/swap.hpp \
@@ -529,7 +525,8 @@ time_hash_map-time_hash_map.o: src/time_hash_map.cc \
   ../nark-bone/src/nark/util/byte_swap_impl.hpp \
   ../nark-bone/src/nark/fstring.hpp ../nark-bone/src/nark/util/throw.hpp \
   ../nark-bone/src/nark/util/autofree.hpp \
-  ../nark-hashmap/src/nark/hash_strmap_iterator.hpp
+  ../nark-hashmap/src/nark/hash_strmap_iterator.hpp \
+  ../nark-bone/src/nark/fstring.cpp
 
 src/sparsehash/internal/sparseconfig.h:
 
@@ -687,10 +684,6 @@ src/config.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/string.h:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_rsize_t.h:
-
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_errno_t.h:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/strings.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/time.h:
@@ -761,6 +754,8 @@ src/config.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include/stddef.h:
 
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include/__stddef_max_align_t.h:
+
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__nullptr:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/typeinfo:
@@ -772,8 +767,6 @@ src/config.h:
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdint:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/new:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base_03:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/initializer_list:
 
@@ -795,11 +788,11 @@ src/config.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstring:
 
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/atomic:
+
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional:
-
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_03:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/unordered_map:
 
@@ -884,6 +877,10 @@ src/sparsehash/sparsetable:
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_nlink_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_useconds_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_rsize_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_errno_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
 
@@ -1207,35 +1204,13 @@ src/sparsehash/sparsetable:
 
 /usr/local/include/boost/type_traits/is_complete.hpp:
 
-/usr/local/include/boost/type_traits/detail/common_type_impl.hpp:
-
-/usr/local/include/boost/type_traits/detail/common_arithmetic_type.hpp:
-
-/usr/local/include/boost/type_traits/detail/composite_pointer_type.hpp:
+/usr/local/include/boost/type_traits/detail/mp_defer.hpp:
 
 /usr/local/include/boost/type_traits/copy_cv.hpp:
 
 /usr/local/include/boost/type_traits/is_const.hpp:
 
 /usr/local/include/boost/type_traits/is_volatile.hpp:
-
-/usr/local/include/boost/type_traits/is_same.hpp:
-
-/usr/local/include/boost/type_traits/is_base_of.hpp:
-
-/usr/local/include/boost/type_traits/is_base_and_derived.hpp:
-
-/usr/local/include/boost/type_traits/is_class.hpp:
-
-/usr/local/include/boost/type_traits/detail/composite_member_pointer_type.hpp:
-
-/usr/local/include/boost/type_traits/remove_pointer.hpp:
-
-/usr/local/include/boost/type_traits/type_identity.hpp:
-
-/usr/local/include/boost/type_traits/is_union.hpp:
-
-/usr/local/include/boost/type_traits/is_convertible.hpp:
 
 /usr/local/include/boost/type_traits/extent.hpp:
 
@@ -1247,11 +1222,9 @@ src/sparsehash/sparsetable:
 
 /usr/local/include/boost/type_traits/detail/has_binary_operator.hpp:
 
-/usr/local/include/boost/type_traits/detail/yes_no_type.hpp:
+/usr/local/include/boost/type_traits/make_void.hpp:
 
-/usr/local/include/boost/type_traits/is_fundamental.hpp:
-
-/usr/local/include/boost/type_traits/detail/is_likely_lambda.hpp:
+/usr/local/include/boost/type_traits/is_convertible.hpp:
 
 /usr/local/include/boost/type_traits/has_bit_and_assign.hpp:
 
@@ -1266,6 +1239,14 @@ src/sparsehash/sparsetable:
 /usr/local/include/boost/type_traits/has_complement.hpp:
 
 /usr/local/include/boost/type_traits/detail/has_prefix_operator.hpp:
+
+/usr/local/include/boost/type_traits/detail/yes_no_type.hpp:
+
+/usr/local/include/boost/type_traits/is_fundamental.hpp:
+
+/usr/local/include/boost/type_traits/is_same.hpp:
+
+/usr/local/include/boost/type_traits/remove_pointer.hpp:
 
 /usr/local/include/boost/type_traits/has_dereference.hpp:
 
@@ -1315,8 +1296,6 @@ src/sparsehash/sparsetable:
 
 /usr/local/include/boost/type_traits/is_assignable.hpp:
 
-/usr/local/include/boost/type_traits/has_trivial_assign.hpp:
-
 /usr/local/include/boost/type_traits/has_nothrow_constructor.hpp:
 
 /usr/local/include/boost/type_traits/is_default_constructible.hpp:
@@ -1325,15 +1304,13 @@ src/sparsehash/sparsetable:
 
 /usr/local/include/boost/type_traits/is_copy_constructible.hpp:
 
-/usr/local/include/boost/noncopyable.hpp:
+/usr/local/include/boost/type_traits/is_constructible.hpp:
 
-/usr/local/include/boost/core/noncopyable.hpp:
+/usr/local/include/boost/type_traits/is_destructible.hpp:
 
 /usr/local/include/boost/type_traits/has_nothrow_destructor.hpp:
 
 /usr/local/include/boost/type_traits/has_trivial_destructor.hpp:
-
-/usr/local/include/boost/type_traits/is_destructible.hpp:
 
 /usr/local/include/boost/type_traits/has_plus.hpp:
 
@@ -1353,6 +1330,8 @@ src/sparsehash/sparsetable:
 
 /usr/local/include/boost/type_traits/has_right_shift_assign.hpp:
 
+/usr/local/include/boost/type_traits/has_trivial_assign.hpp:
+
 /usr/local/include/boost/type_traits/has_trivial_constructor.hpp:
 
 /usr/local/include/boost/type_traits/has_trivial_copy.hpp:
@@ -1368,6 +1347,12 @@ src/sparsehash/sparsetable:
 /usr/local/include/boost/type_traits/has_virtual_destructor.hpp:
 
 /usr/local/include/boost/type_traits/is_abstract.hpp:
+
+/usr/local/include/boost/type_traits/is_base_and_derived.hpp:
+
+/usr/local/include/boost/type_traits/is_base_of.hpp:
+
+/usr/local/include/boost/type_traits/is_class.hpp:
 
 /usr/local/include/boost/type_traits/is_complex.hpp:
 
@@ -1479,9 +1464,11 @@ src/sparsehash/sparsetable:
 
 /usr/local/include/boost/type_traits/is_compound.hpp:
 
-/usr/local/include/boost/type_traits/is_constructible.hpp:
-
 /usr/local/include/boost/type_traits/is_copy_assignable.hpp:
+
+/usr/local/include/boost/noncopyable.hpp:
+
+/usr/local/include/boost/core/noncopyable.hpp:
 
 /usr/local/include/boost/type_traits/is_empty.hpp:
 
@@ -1511,6 +1498,8 @@ src/sparsehash/sparsetable:
 
 /usr/local/include/boost/type_traits/is_stateless.hpp:
 
+/usr/local/include/boost/type_traits/is_union.hpp:
+
 /usr/local/include/boost/type_traits/is_unsigned.hpp:
 
 /usr/local/include/boost/type_traits/is_virtual_base_of.hpp:
@@ -1518,8 +1507,6 @@ src/sparsehash/sparsetable:
 /usr/local/include/boost/type_traits/make_signed.hpp:
 
 /usr/local/include/boost/type_traits/make_unsigned.hpp:
-
-/usr/local/include/boost/type_traits/make_void.hpp:
 
 /usr/local/include/boost/type_traits/rank.hpp:
 
@@ -1530,6 +1517,8 @@ src/sparsehash/sparsetable:
 /usr/local/include/boost/type_traits/remove_cv_ref.hpp:
 
 /usr/local/include/boost/type_traits/remove_volatile.hpp:
+
+/usr/local/include/boost/type_traits/type_identity.hpp:
 
 /usr/local/include/boost/type_traits/integral_promotion.hpp:
 
@@ -1606,3 +1595,5 @@ src/sparsehash/sparsetable:
 ../nark-bone/src/nark/util/autofree.hpp:
 
 ../nark-hashmap/src/nark/hash_strmap_iterator.hpp:
+
+../nark-bone/src/nark/fstring.cpp:
