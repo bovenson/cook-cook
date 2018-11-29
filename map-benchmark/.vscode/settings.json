@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.tpl": "html",
+    "__tree": "cpp",
+    "bitset": "cpp",
+    "set": "cpp",
+    "sparsetable": "cpp",
+    "sparse_hash_map": "cpp",
+    "dense_hash_map": "cpp"
+  }
+}
