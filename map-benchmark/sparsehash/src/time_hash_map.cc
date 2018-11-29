@@ -101,10 +101,10 @@ static bool FLAGS_test_hash_map = true;
 static bool FLAGS_test_map = true;
 static bool FLAGS_test_nark_map = true;
 
-static bool FLAGS_test_4_bytes = true;
+static bool FLAGS_test_4_bytes = false;
 static bool FLAGS_test_8_bytes = true;
-static bool FLAGS_test_16_bytes = true;
-static bool FLAGS_test_256_bytes = true;
+static bool FLAGS_test_16_bytes = false;
+static bool FLAGS_test_256_bytes = false;
 
 #if defined(HAVE_UNORDERED_MAP)
 using HASH_NAMESPACE::unordered_map;
@@ -112,7 +112,7 @@ using HASH_NAMESPACE::unordered_map;
 using HASH_NAMESPACE::hash_map;
 #endif
 
-static const int kDefaultIters = 10000000;
+static const int kDefaultIters = 100000000;
 
 // A version of each of the hashtable classes we test, that has been
 // augumented to provide a common interface.  For instance, the
@@ -604,7 +604,7 @@ template<class MapType>
 static void time_map_iterate(int iters) {
   MapType set;
   Rusage t;
-  int r;
+  double r;
   int i;
 
   for (i = 0; i < iters; i++) {
@@ -616,7 +616,7 @@ static void time_map_iterate(int iters) {
   for (typename MapType::const_iterator it = set.begin(), it_end = set.end();
        it != it_end;
        ++it) {
-    r ^= it->second;
+    r = (r + it->second) / 2;
   }
 
   double ut = t.UserTime();
@@ -700,28 +700,28 @@ static void test_all_maps(int obj_size, int iters) {
   const bool stress_hash_function = obj_size <= 8;
 
   if (FLAGS_test_sparse_hash_map)
-    measure_map< EasyUseSparseHashMap<ObjType, int, HashFn>,
-                 EasyUseSparseHashMap<ObjType*, int, HashFn> >(
+    measure_map< EasyUseSparseHashMap<ObjType, double, HashFn>,
+                 EasyUseSparseHashMap<ObjType*, double, HashFn> >(
         "SPARSE_HASH_MAP", obj_size, iters, stress_hash_function);
 
   if (FLAGS_test_dense_hash_map)
-    measure_map< EasyUseDenseHashMap<ObjType, int, HashFn>,
-                 EasyUseDenseHashMap<ObjType*, int, HashFn> >(
+    measure_map< EasyUseDenseHashMap<ObjType, double, HashFn>,
+                 EasyUseDenseHashMap<ObjType*, double, HashFn> >(
         "DENSE_HASH_MAP", obj_size, iters, stress_hash_function);
 
   if (FLAGS_test_hash_map)
-    measure_map< EasyUseHashMap<ObjType, int, HashFn>,
-                 EasyUseHashMap<ObjType*, int, HashFn> >(
+    measure_map< EasyUseHashMap<ObjType, double, HashFn>,
+                 EasyUseHashMap<ObjType*, double, HashFn> >(
         "STANDARD HASH_MAP", obj_size, iters, stress_hash_function);
 
   if (FLAGS_test_map)
-    measure_map< EasyUseMap<ObjType, int>,
-                 EasyUseMap<ObjType*, int> >(
+    measure_map< EasyUseMap<ObjType, double>,
+                 EasyUseMap<ObjType*, double> >(
         "STANDARD MAP", obj_size, iters, stress_hash_function);
 
   if (FLAGS_test_nark_map) {
-    measure_map< EasyUseNarkMap<ObjType, int, HashFn>,
-                  EasyUseNarkMap<ObjType*, int, HashFn> >(
+    measure_map< EasyUseNarkMap<ObjType, double, HashFn>,
+                  EasyUseNarkMap<ObjType*, double, HashFn> >(
         "NARK MAP", obj_size, iters, stress_hash_function);
   }
 }
