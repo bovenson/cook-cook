@@ -49,8 +49,26 @@ for _i in range(len(size_list)):
 # print(res[0][0][0])
 # print(res[-1][-1][-2])
 
-for _i in range(len(size_list)):
-    for _k in range(len(item_list)):
-        print('\n', '+' * 20, size_list[_i], 'byte', '&&', item_list[_k], '+' * 20)
-        for _j in range(len(map_list)):
-            print(repr(map_list[_j]).rjust(20), ': ', '{0:.1f}'.format(res[_i][_j][_k]))
+def print_all():
+    with open('all.txt', 'w+') as f:
+        for _i in range(len(size_list)):
+            for _k in range(len(item_list)):
+                f.write('\n' + '+' * 20 + str(size_list[_i]) + ' byte ' + ' && ' + str(item_list[_k]) + '+' * 20)
+                for _j in range(len(map_list)):
+                    f.write(repr(map_list[_j]).rjust(20) + ': ' + '{0:.1f}'.format(res[_i][_j][_k]))
+    
+
+# print oper
+def print_oper(oper):
+    _k = item_list.index(oper)
+    _file_name = os.path.join('.', 'analysis', (oper + '.txt').replace('/', ''))
+    with open(_file_name, 'w+') as f:
+        for _i in range(len(size_list)):
+            f.write('\n' + '+' * 20 + str(size_list[_i]) + ' byte ' + ' && ' + str(item_list[_k]) + '+' * 20 + '\n')
+            for _j in range(len(map_list)):
+                f.write(repr(map_list[_j]).rjust(20) + ': ' + '{0:.1f}'.format(res[_i][_j][_k]) + '\n')
+
+
+
+for _oper in item_list:
+    print_oper(_oper)
