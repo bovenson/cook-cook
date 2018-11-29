@@ -99,6 +99,7 @@ static bool FLAGS_test_sparse_hash_map = true;
 static bool FLAGS_test_dense_hash_map = true;
 static bool FLAGS_test_hash_map = true;
 static bool FLAGS_test_map = true;
+static bool FLAGS_test_nark_map = true;
 
 static bool FLAGS_test_4_bytes = true;
 static bool FLAGS_test_8_bytes = true;
@@ -247,7 +248,7 @@ template<int Size, int Hashsize> class HashObject {
   }
 
   bool operator==(const class_type& that) const { return this->i_ == that.i_; }
-  bool operator< (const class_type& that) const { return this->i_ < that.i_; }
+  bool operator< (const class_type& that) const { return this->i_ <  that.i_; }
   bool operator<=(const class_type& that) const { return this->i_ <= that.i_; }
 
  private:
@@ -384,7 +385,7 @@ static void print_uname() {
 #ifdef HAVE_SYS_UTSNAME_H
   struct utsname u;
   if (uname(&u) == 0) {
-    printf("%s %s %s %s %s\n",
+    printf("%s | %s | %s | %s | %s\n",
            u.sysname, u.nodename, u.release, u.version, u.machine);
   }
 #endif
@@ -716,11 +717,13 @@ static void test_all_maps(int obj_size, int iters) {
   if (FLAGS_test_map)
     measure_map< EasyUseMap<ObjType, int>,
                  EasyUseMap<ObjType*, int> >(
-        "STANDARD MAP", obj_size, iters, false);
+        "STANDARD MAP", obj_size, iters, stress_hash_function);
 
-  measure_map< EasyUseNarkMap<ObjType, int, HashFn>,
-                EasyUseNarkMap<ObjType*, int, HashFn> >(
-      "NARK MAP", obj_size, iters, stress_hash_function);
+  if (FLAGS_test_nark_map) {
+    measure_map< EasyUseNarkMap<ObjType, int, HashFn>,
+                  EasyUseNarkMap<ObjType*, int, HashFn> >(
+        "NARK MAP", obj_size, iters, stress_hash_function);
+  }
 }
 
 int main(int argc, char** argv) {
@@ -746,6 +749,5 @@ int main(int argc, char** argv) {
   if (FLAGS_test_8_bytes)  test_all_maps< HashObject<8,8> >(8, iters/2);
   if (FLAGS_test_16_bytes)  test_all_maps< HashObject<16,16> >(16, iters/4);
   if (FLAGS_test_256_bytes)  test_all_maps< HashObject<256,32> >(256, iters/32);
-
   return 0;
 }
