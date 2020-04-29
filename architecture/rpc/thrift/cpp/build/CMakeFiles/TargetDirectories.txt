@@ -1,0 +1,3 @@
+/Users/sunzhenkai/Git/demos/architecture/rpc/thrift/cpp/build/CMakeFiles/rebuild_cache.dir
+/Users/sunzhenkai/Git/demos/architecture/rpc/thrift/cpp/build/CMakeFiles/edit_cache.dir
+/Users/sunzhenkai/Git/demos/architecture/rpc/thrift/cpp/build/CMakeFiles/Hello.dir
