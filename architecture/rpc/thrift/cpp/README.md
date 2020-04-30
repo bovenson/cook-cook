@@ -1,0 +1,3 @@
+# Requirement
+- automake 
+- pkg-config
