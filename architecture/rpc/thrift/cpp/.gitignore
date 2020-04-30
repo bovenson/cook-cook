@@ -1,3 +1,5 @@
 third/src/boost_1_71_0.tar.gz
 third/build
 third/deps
+**/.DS_Store
+**/*.swp
