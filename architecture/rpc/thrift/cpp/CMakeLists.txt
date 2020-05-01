@@ -1,7 +1,42 @@
 cmake_minimum_required(VERSION 3.10)
+project("Thrift Demo Project")
 
-# set the project name
-project(Tutorial)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "-std=c++11 -g -mavx -maes -O3 -w -fPIC -fno-omit-frame-pointer")
 
-# add the executable
-add_executable(Hello src/main.cpp)
+set(DEPS_DIR ${CMAKE_SOURCE_DIR}/third/deps)
+set(DEPS_LIB_DIR ${DEPS_DIR}/lib)
+set(DEPS_INCLUDE_DIR ${DEPS_DIR}/include)
+set(DEPS_THRIFT_GEN_DIR ${CMAKE_SOURCE_DIR}/thrift/gen-cpp)
+
+message(STATUS "DEPS_DIR = " ${DEPS_DIR})
+message(STATUS "DEPS_INCLUDE_DIR = " ${DEPS_INCLUDE_DIR})
+message(STATUS "DEPS_THRIFT_GEN_DIR = " ${DEPS_THRIFT_GEN_DIR})
+
+include_directories(${DEPS_THRIFT_GEN_DIR})
+include_directories(${DEPS_INCLUDE_DIR})
+include_directories(${DEPS_INCLUDE_DIR}/thrift)
+
+find_library (GFLAGS gflags ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+find_library (GLOG glog ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+find_library (BOOST_SYSTEM boost_system ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+find_library (THRIFT thrift ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+find_library (THRIFT_NB thriftnb ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+find_library (EVENT event ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+
+set(EXTERNAL_LIB ${BOOST_SYSTEM} ${THRIFT} ${THRIFT_NB} ${EVENT} ${GFLAGS} ${GLOG})
+
+file (GLOB SOURCE_FILES src/*.cpp src/client/*.cpp src/server/*.cpp include/gen-cpp/*.cpp)
+add_library (service-lib ${SOURCE_FILES})
+
+add_compile_options(-stdlib=libc++)
+
+add_executable(main src/main.cpp)
+add_executable(client src/client/client.cpp)
+add_executable(server src/server/server.cpp)
+
+target_link_libraries(main ${service-lib} ${EXTERNAL_LIB})
+target_link_libraries(client ${service-lib} ${EXTERNAL_LIB})
+target_link_libraries(server ${service-lib} ${EXTERNAL_LIB})
+
