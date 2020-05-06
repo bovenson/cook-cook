@@ -2,6 +2,8 @@
 // You should copy it to another filename to avoid overwriting it.
 
 #include "Calculator.h"
+#include "shared_types.h"
+
 #include <protocol/TBinaryProtocol.h>
 #include <server/TSimpleServer.h>
 #include <transport/TServerSocket.h>
@@ -15,45 +17,51 @@ using namespace ::apache::thrift::server;
 using boost::shared_ptr;
 
 using namespace tutorial;
+using namespace shared;
 
 class CalculatorHandler : virtual public CalculatorIf {
- public:
-  CalculatorHandler() {
-    // Your initialization goes here
-  }
+public:
+    CalculatorHandler() {
+        // Your initialization goes here
+    }
 
-  void ping() {
-    // Your implementation goes here
-    printf("ping\n");
-  }
+    void ping() {
+        // Your implementation goes here
+        printf("ping\n");
+    }
 
-  int32_t add(const int32_t num1, const int32_t num2) {
-    // Your implementation goes here
-    printf("add\n");
-  }
+    int32_t add(const int32_t num1, const int32_t num2) {
+        // Your implementation goes here
+        printf("add\n");
+    }
 
-  int32_t calculate(const int32_t logid, const Work& w) {
-    // Your implementation goes here
-    printf("calculate\n");
-  }
+    int32_t calculate(const int32_t logid, const Work &w) {
+        // Your implementation goes here
+        printf("calculate\n");
+    }
 
-  void zip() {
-    // Your implementation goes here
-    printf("zip\n");
-  }
+    void zip() {
+        // Your implementation goes here
+        printf("zip\n");
+    }
+
+    void getStruct(SharedStruct &_return, const int32_t key) {
+        // Your implementation goes here
+        printf("getStruct\n");
+    }
 
 };
 
 int main(int argc, char **argv) {
-  int port = 9090;
-  shared_ptr<CalculatorHandler> handler(new CalculatorHandler());
-  shared_ptr<TProcessor> processor(new CalculatorProcessor(handler));
-  shared_ptr<TServerTransport> serverTransport(new TServerSocket(port));
-  shared_ptr<TTransportFactory> transportFactory(new TBufferedTransportFactory());
-  shared_ptr<TProtocolFactory> protocolFactory(new TBinaryProtocolFactory());
+    int port = 9090;
+    shared_ptr<CalculatorHandler> handler(new CalculatorHandler());
+    shared_ptr<TProcessor> processor(new CalculatorProcessor(handler));
+    shared_ptr<TServerTransport> serverTransport(new TServerSocket(port));
+    shared_ptr<TTransportFactory> transportFactory(new TBufferedTransportFactory());
+    shared_ptr<TProtocolFactory> protocolFactory(new TBinaryProtocolFactory());
 
-  TSimpleServer server(processor, serverTransport, transportFactory, protocolFactory);
-  server.serve();
-  return 0;
+    TSimpleServer server(processor, serverTransport, transportFactory, protocolFactory);
+    server.serve();
+    return 0;
 }
 
