@@ -21,13 +21,16 @@ include_directories(${DEPS_INCLUDE_DIR}/thrift)
 find_library (GFLAGS gflags ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
 find_library (GLOG glog ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
 find_library (BOOST_SYSTEM boost_system ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+find_library (PROTO_BUFFER protobuf ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+find_library (PROTO_LITE protobuf-lite ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
+find_library (PROTOC protoc ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
 find_library (THRIFT thrift ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
 find_library (THRIFT_NB thriftnb ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
 find_library (EVENT event ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
 
-set(EXTERNAL_LIB ${BOOST_SYSTEM} ${THRIFT} ${THRIFT_NB} ${EVENT} ${GFLAGS} ${GLOG})
+set(EXTERNAL_LIB ${BOOST_SYSTEM} ${THRIFT} ${THRIFT_NB} ${PROTO_BUFFER} ${PROTO_LITE} ${PROTOC} ${EVENT} ${GFLAGS} ${GLOG})
 
-file (GLOB SOURCE_FILES src/*.cpp src/client/*.cpp src/server/*.cpp include/gen-cpp/*.cpp)
+file (GLOB SOURCE_FILES thrift/gen-cpp/*.cpp)
 add_library (service-lib ${SOURCE_FILES})
 
 add_compile_options(-stdlib=libc++)
