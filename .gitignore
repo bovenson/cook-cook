@@ -1,6 +1,9 @@
-*/build
-*/*.swp
-*/vsprojects/*
-*/.vscode
+**/target
+**/.idea
+**/build
+**/cmake-build-debug
+**/*.swp
+**/vsprojects/*
+**/.vscode
 *.o
 *.pc
