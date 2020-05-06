@@ -14,9 +14,9 @@ message(STATUS "DEPS_DIR = " ${DEPS_DIR})
 message(STATUS "DEPS_INCLUDE_DIR = " ${DEPS_INCLUDE_DIR})
 message(STATUS "DEPS_THRIFT_GEN_DIR = " ${DEPS_THRIFT_GEN_DIR})
 
-include_directories(${DEPS_THRIFT_GEN_DIR})
 include_directories(${DEPS_INCLUDE_DIR})
 include_directories(${DEPS_INCLUDE_DIR}/thrift)
+include_directories(${DEPS_THRIFT_GEN_DIR})
 
 find_library (GFLAGS gflags ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
 find_library (GLOG glog ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
@@ -27,16 +27,15 @@ find_library (EVENT event ${DEPS_LIB_DIR} NO_DEFAULT_PATH)
 
 set(EXTERNAL_LIB ${BOOST_SYSTEM} ${THRIFT} ${THRIFT_NB} ${EVENT} ${GFLAGS} ${GLOG})
 
-file (GLOB SOURCE_FILES src/*.cpp src/client/*.cpp src/server/*.cpp include/gen-cpp/*.cpp)
+file (GLOB SOURCE_FILES ${DEPS_THRIFT_GEN_DIR}/*.cpp)
 add_library (service-lib ${SOURCE_FILES})
 
-add_compile_options(-stdlib=libc++)
-
 add_executable(main src/main.cpp)
-add_executable(client src/client/client.cpp)
-add_executable(server src/server/server.cpp)
+target_link_libraries(main service-lib ${EXTERNAL_LIB})
 
-target_link_libraries(main ${service-lib} ${EXTERNAL_LIB})
-target_link_libraries(client ${service-lib} ${EXTERNAL_LIB})
-target_link_libraries(server ${service-lib} ${EXTERNAL_LIB})
+add_executable(client src/client/client.cpp)
+target_link_libraries(client service-lib ${EXTERNAL_LIB})
+
+add_executable(server src/server/server.cpp)
+target_link_libraries(server service-lib ${EXTERNAL_LIB})
 
