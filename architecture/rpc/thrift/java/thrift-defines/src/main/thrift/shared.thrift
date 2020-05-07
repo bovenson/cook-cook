@@ -23,8 +23,7 @@
  */
 
 namespace cpp shared
-namespace java top.szhkai.shared
-namespace perl shared
+namespace java top.szhkai.architecture.rpc.thrift.tutorial
 
 struct SharedStruct {
   1: i32 key

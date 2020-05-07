@@ -15,14 +15,14 @@ export CXXFLAGS="$CXXFLAGS -std=c++11 -fPIC -mavx -maes -O3 -Wno-sign-compare -g
 export CFLAGS=-fPIC
 export PATH=${deps_dir}/bin:$PATH
 
-flag_clean=""
-flag_concat_boost=""
-flag_openssl=""
-flag_gflags=""
-flag_glog=""
-flag_boost=""
-flag_event=""
-flag_proto=""
+flag_clean="Y"
+flag_concat_boost="Y"
+flag_openssl="Y"
+flag_gflags="Y"
+flag_glog="Y"
+flag_boost="Y"
+flag_event="Y"
+flag_proto="Y"
 flag_thrift="Y"
 
 thrift_version=0.5.0
