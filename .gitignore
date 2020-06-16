@@ -7,3 +7,8 @@
 **/.vscode
 *.o
 *.pc
+**/.DS_Store
+**/.mvn
+**/consul-darwin
+**/consul-linux
+**/*.iml
