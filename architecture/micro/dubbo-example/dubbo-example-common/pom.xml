@@ -10,5 +10,5 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dubbo-example-common</artifactId>
     <name>dubbo-example-common</name>
-    <version>0.0.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 </project>
