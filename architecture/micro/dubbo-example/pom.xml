@@ -14,4 +14,14 @@
         <module>dubbo-example-client</module>
         <module>dubbo-example-server</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.thrift</groupId>
+                <artifactId>libthrift</artifactId>
+                <version>0.8.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
