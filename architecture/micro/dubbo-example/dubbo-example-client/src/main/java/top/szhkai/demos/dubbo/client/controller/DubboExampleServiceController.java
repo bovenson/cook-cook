@@ -9,17 +9,17 @@ import top.szhkai.demos.dubbo.services.DubboExampleService;
 
 @RestController
 public class DubboExampleServiceController {
-    @DubboReference
-    private DubboExampleService service;
+    // @DubboReference
+    // private DubboExampleService service;
 
-    @RequestMapping("echo")
-    public String echo(@RequestParam String word) {
-        return service.echo(word);
-    }
-
-    @RequestMapping("echoOld")
-    public String echoOld(@RequestParam String word) {
-        DubboExampleService srv = DubboRegistryHelper.find();
-        return srv.echo(word);
-    }
+    // @RequestMapping("echo")
+    // public String echo(@RequestParam String word) {
+    //     return service.echo(word);
+    // }
+    //
+    // @RequestMapping("echoOld")
+    // public String echoOld(@RequestParam String word) {
+    //     DubboExampleService srv = DubboRegistryHelper.find();
+    //     return srv.echo(word);
+    // }
 }

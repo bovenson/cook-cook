@@ -10,9 +10,10 @@
     <dubbo:registry protocol="consul" address="localhost:8500"/>
     <dubbo:protocol id="thrift" name="thrift" port="9100"/>
     <dubbo:service protocol="thrift"
-                   interface="top.szhkai.demos.dubbo.services.DubboExampleService"
-                   ref="dubboExampleServer"
+                   interface="top.szhkai.demos.dubbo.UerService$Iface"
+                   ref="uerService"
                    timeout="6000"
                    retries="1"/>
-    <bean id="dubboExampleServer" class="top.szhkai.demos.dubbo.server.impl.DubboExampleServiceImpl"/>
+    <bean id="uerService" class="top.szhkai.demos.dubbo.server.impl.UserServiceImpl"/>
+    <!--<bean id="dubboExampleServer" class="top.szhkai.demos.dubbo.server.impl.DubboExampleServiceImpl"/>-->
 </beans>

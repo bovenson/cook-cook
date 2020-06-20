@@ -2,22 +2,30 @@ namespace java top.szhkai.demos.dubbo
 namespace cpp demos.user
 
 struct User {
-    1: required string id;
-    2: required string name;
+    1: optional string id;
+    2: optional string name;
 }
 
-struct UserServiceRequest {
-    1: required i64 reqTs;
-    2: required User user;
+struct UserGetRequest {
+    1: optional i64 reqTs;
+    2: optional string uid;
 }
 
-struct UserServiceResponse {
-    1: required bool isOk;
-    2: required User user;
+struct UserGetResponse {
+    1: optional bool isOk;
+    2: optional User user;
 }
 
+struct UserPutRequest {
+    1: optional i64 reqTs;
+    2: optional User user;
+}
+
+struct UserPutResponse {
+    1: optional bool isOk;
+}
 
 service UerService {
-    UserServiceResponse put(UserServiceRequest request);
-    UserServiceResponse get(UserServiceRequest request);
+    UserPutResponse put(UserPutRequest request);
+    UserGetResponse get(UserGetRequest request);
 }
