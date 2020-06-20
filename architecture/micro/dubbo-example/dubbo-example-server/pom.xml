@@ -6,7 +6,7 @@
 		<groupId>top.szhkai.demos</groupId>
 		<artifactId>dubbo-example</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
 	</parent>
 	<artifactId>dubbo-example-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
