@@ -23,7 +23,6 @@
         <slf4j.version>1.7.30</slf4j.version>
 
         <!-- submodule properties -->
-        <thrift.defines.version>0.0.1-SNAPSHOT</thrift.defines.version>
         <thrift.demos.impl.version>0.0.1-SNAPSHOT</thrift.demos.impl.version>
     </properties>
 

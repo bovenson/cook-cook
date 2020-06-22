@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>thrift-defines</artifactId>
-    <version>${thrift.defines.version}</version>
+    <version>1.0.0_${thrift.version}-SNAPSHOT</version>
 
     <properties>
         <thrift.version>0.5.0</thrift.version>
@@ -18,7 +18,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>thrift</groupId>
+            <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
             <version>${thrift.version}</version>
         </dependency>

@@ -1,9 +1,13 @@
 #!/bin/bash
-set -x
+
 thrift_version=$1
 [ -z "$thrift_version" ] && echo "thrift version not specified" && exit 1
-echo "install with thrift verion $thrift_version"
-alias thrift="thrift_$thrift_version"
-echo "complile with thrift $(thrift -version)"
-
-mvn clean install -Dthrift.version="${thrift_version}"
+#thrift_version_under=$(echo "$thrift_version" | tr '.' '_')
+thrift_path=$(which "thrift_$thrift_version")
+#echo $thrift_path
+#thrift_bin_path="THRIFT_HOME_$thrift_version_under"
+#export PATH="${!thrift_bin_path}/bin":$PATH
+thrift_home_bin=$(dirname "$thrift_path")
+export PATH=$thrift_home_bin:$PATH
+thrift -version
+#mvn clean install -Dthrift.version="${thrift_version}"
