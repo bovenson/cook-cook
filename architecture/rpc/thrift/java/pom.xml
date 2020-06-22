@@ -9,6 +9,8 @@
     <modules>
         <module>thrift-defines</module>
         <module>thrift-demos-impl</module>
+        <module>thrift-example-0.5.0</module>
+        <module>thrift-example-0.13.0</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -19,7 +21,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <slf4j.version>1.7.30</slf4j.version>
-        <thrift.version>0.5.0</thrift.version>
 
         <!-- submodule properties -->
         <thrift.defines.version>0.0.1-SNAPSHOT</thrift.defines.version>
@@ -27,12 +28,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>thrift</groupId>
-            <artifactId>libthrift</artifactId>
-            <version>${thrift.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>

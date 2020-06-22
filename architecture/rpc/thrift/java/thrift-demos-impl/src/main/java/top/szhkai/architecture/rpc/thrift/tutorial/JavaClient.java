@@ -28,7 +28,6 @@ import org.apache.thrift.transport.TTransport;
 public class JavaClient {
     public static void main(String [] args) {
         try {
-
             TTransport transport = new TSocket("localhost", 9090);
             TProtocol protocol = new TBinaryProtocol(transport);
             Calculator.Client client = new Calculator.Client(protocol);
@@ -67,11 +66,8 @@ public class JavaClient {
             System.out.println("Check log: " + log.value);
 
             transport.close();
-
         } catch (TException x) {
             x.printStackTrace();
         }
-
     }
-
 }
