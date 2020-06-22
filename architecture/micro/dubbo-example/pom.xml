@@ -15,12 +15,16 @@
         <module>dubbo-example-server</module>
     </modules>
 
+    <properties>
+        <lib-thrift.version>0.13.0</lib-thrift.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.apache.thrift</groupId>
                 <artifactId>libthrift</artifactId>
-                <version>0.8.0</version>
+                <version>${lib-thrift.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -8,6 +8,6 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="dubbo-example-consumer"/>
     <dubbo:registry protocol="consul" address="localhost:8500"/>
-    <dubbo:protocol id="thrift" name="thrift" port="9100"/>
+    <dubbo:protocol id="native-thrift" name="native-thrift" port="9100"/>
     <dubbo:reference id="uerService" interface="top.szhkai.demos.dubbo.UerService$Iface"/>
 </beans>

@@ -78,6 +78,10 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.orbitz.consul</groupId>
 			<artifactId>consul-client</artifactId>
 			<version>1.4.2</version>
