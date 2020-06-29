@@ -16,6 +16,6 @@ public class ComplexIFaceServiceImpl implements ComplexIFaceService.Iface {
         for (int i = 0; i < request.getWsSize(); ++i) {
             ms.put(String.valueOf(i), request.ws.get(i));
         }
-        return new Response().setMs(ms);
+        return new Response().setMs(ms).setEcho(request.getWs());
     }
 }

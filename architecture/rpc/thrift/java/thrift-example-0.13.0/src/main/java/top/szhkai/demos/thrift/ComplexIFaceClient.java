@@ -88,6 +88,7 @@ public class ComplexIFaceClient {
         byte[] data = serializer.serialize(request);
         System.out.println(data.length);
         Response response = client.get(request);
+        System.out.println(serializer.serialize(response.getEcho()));
         for (Wrapper wp: response.getMs().values()) {
             System.out.println(serializer.serialize(wp).length);
         }

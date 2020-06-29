@@ -25,14 +25,20 @@
     </dependencies>
 
     <build>
-        <!--<resources>-->
-            <!--<resource>-->
-                <!--<directory>-->
-                    <!--${project.basedir}/src/main/resources-->
-                <!--</directory>-->
-                <!--<filtering>true</filtering>-->
-            <!--</resource>-->
-        <!--</resources>-->
+        <resources>
+            <resource>
+                <directory>
+                    ${project.basedir}/src/main/resources
+                </directory>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>
+                    ${project.basedir}/src/main/thrift
+                </directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -81,25 +87,25 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.apache.thrift.tools</groupId>
-                <artifactId>maven-thrift-plugin</artifactId>
-                <version>0.1.10</version>
-                <configuration>
-                    <thriftExecutable>thrift</thriftExecutable>
-                    <generator>java</generator>
-                    <thriftSourceRoot>${project.build.directory}/thrift-tmp</thriftSourceRoot>
-                </configuration>
-                <executions>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.thrift.tools</groupId>-->
+                <!--<artifactId>maven-thrift-plugin</artifactId>-->
+                <!--<version>0.1.10</version>-->
+                <!--<configuration>-->
+                    <!--<thriftExecutable>thrift</thriftExecutable>-->
+                    <!--<generator>java</generator>-->
+                    <!--<thriftSourceRoot>${project.build.directory}/thrift-tmp</thriftSourceRoot>-->
+                <!--</configuration>-->
+                <!--<executions>-->
                     <!--<execution>-->
                         <!--<id>thrift-sources</id>-->
-                        <!--&lt;!&ndash;<phase>generate-sources</phase>&ndash;&gt;-->
+                        <!--<phase>generate-sources</phase>-->
                         <!--<goals>-->
                             <!--<goal>compile</goal>-->
                         <!--</goals>-->
                     <!--</execution>-->
-                </executions>
-            </plugin>
+                <!--</executions>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 </project>
