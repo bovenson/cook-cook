@@ -16,7 +16,6 @@ public class Thrift5Server {
         TSimpleServer server = new TSimpleServer(processor, transport);
         System.out.println("Thrift server start to serving ...");
 
-
         server.serve();
     }
 }

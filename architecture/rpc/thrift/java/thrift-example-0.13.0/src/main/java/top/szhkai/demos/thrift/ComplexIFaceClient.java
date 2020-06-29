@@ -4,24 +4,88 @@
 package top.szhkai.demos.thrift;
 
 import com.google.gson.Gson;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.thrift.TException;
+import org.apache.thrift.TSerializer;
 import org.apache.thrift.protocol.TBinaryProtocol;
+import org.apache.thrift.protocol.TCompactProtocol;
 import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
-import top.szhkai.demos.thrift.user.ComplexIFaceService;
-import top.szhkai.demos.thrift.user.Request;
-import top.szhkai.demos.thrift.user.Response;
-import top.szhkai.demos.thrift.user.Wrapper;
+import top.szhkai.demos.thrift.user.*;
 
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.UUID;
 
 public class ComplexIFaceClient {
-    public static void testGet(ComplexIFaceService.Client client) throws TException {
+    static String buildString() {
+        return RandomStringUtils.randomAlphanumeric(1<<10);
+    }
+
+    static byte[] buildByteArray() {
+        return buildString().getBytes();
+    }
+
+    static ByteBuffer buildBinary() {
+        return ByteBuffer.wrap(buildByteArray());
+    }
+
+    static Unit buildUnit() {
+        long ts = System.currentTimeMillis();
+        Unit unit = new Unit();
+        unit.setIsOk(ts % 2 == 0);
+        unit.setBtv((byte) (ts % (2<<7)));
+        unit.setI16v((short) (ts % (2<<15)));
+        unit.setI32v((int) (ts % (2<<30)));
+        unit.setI64v(ts);
+        unit.setIfv((double) ts);
+        unit.setStrV(UUID.randomUUID().toString());
+        unit.setEv(HTTPCode.NOT_FOUND);
+        unit.setLv(new ArrayList<>());
+        for (int i = 0; i < 100; ++i) {
+            unit.getLv().add(buildBinary());
+        }
+        unit.setSetV(new HashSet<>());
+        for (int i = 0; i < 100; ++i) {
+            unit.addToSetV(buildString());
+        }
+        unit.setMapV(new HashMap<>());
+        for (int i = 0; i < 100; ++i) {
+            unit.putToMapV(buildString(), buildBinary());
+        }
+        return unit;
+    }
+
+    static Wrapper buildWrapper() {
+        Wrapper wrapper = new Wrapper();
+        wrapper.setUl(new ArrayList<>());
+        wrapper.setUm(new HashMap<>());
+        for (int i = 0; i < 100; ++i) {
+            wrapper.addToUl(buildUnit());
+            wrapper.putToUm(UUID.randomUUID().toString(), buildUnit());
+        }
+        return wrapper;
+    }
+
+    static Request buildRequest() {
         Request request = new Request();
         request.setWs(new ArrayList<>());
-        request.getWs().add(new Wrapper());
+        for (int i = 0; i < 100; ++i) {
+            request.addToWs(buildWrapper());
+        }
+        return request;
+    }
+
+    public static void testGet(ComplexIFaceService.Client client) throws TException {
+        Request request = buildRequest();
+        // Request request = new Request();
         Response response = client.get(request);
+        TSerializer serializer = new TSerializer(new TCompactProtocol.Factory());
+        byte[] data = serializer.serialize(request);
+        System.out.println(data.length);
         System.out.println(new Gson().toJson(response));
     }
 

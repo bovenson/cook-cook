@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.szhkai</groupId>
-    <artifactId>thrift-defines</artifactId>
+    <artifactId>thrift-defines_0.13.0</artifactId>
     <version>1.0.0_${thrift.version}-SNAPSHOT</version>
 
     <properties>
-        <thrift.version>0.5.0</thrift.version>
+        <thrift.version>0.13.0</thrift.version>
     </properties>
 
     <dependencies>
@@ -43,9 +43,6 @@
                         <sourcepath>
                             ${project.basedir}/src/main/java
                         </sourcepath>
-                        <sourcepath>
-                            ${project.basedir}/src/main/thrift
-                        </sourcepath>
                     </compilerArguments>
                 </configuration>
             </plugin>
@@ -71,25 +68,25 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.thrift.tools</groupId>-->
-<!--                <artifactId>maven-thrift-plugin</artifactId>-->
-<!--                <version>0.1.10</version>-->
-<!--                <configuration>-->
-<!--                    <thriftExecutable>thrift</thriftExecutable>-->
-<!--                    <generator>java</generator>-->
-<!--                    <thriftSourceRoot>${project.build.directory}/thrift-tmp</thriftSourceRoot>-->
-<!--                </configuration>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>thrift-sources</id>-->
-<!--                        <phase>generate-sources</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>compile</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.thrift.tools</groupId>
+                <artifactId>maven-thrift-plugin</artifactId>
+                <version>0.1.10</version>
+                <configuration>
+                    <thriftExecutable>thrift</thriftExecutable>
+                    <generator>java</generator>
+                    <thriftSourceRoot>${project.build.directory}/thrift-tmp</thriftSourceRoot>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>thrift-sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
