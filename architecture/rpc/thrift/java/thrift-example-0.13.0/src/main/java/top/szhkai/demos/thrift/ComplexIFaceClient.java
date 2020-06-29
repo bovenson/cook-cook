@@ -21,6 +21,8 @@ import java.util.HashSet;
 import java.util.UUID;
 
 public class ComplexIFaceClient {
+    static int times = 5;
+
     static String buildString() {
         return RandomStringUtils.randomAlphanumeric(1<<10);
     }
@@ -45,15 +47,15 @@ public class ComplexIFaceClient {
         unit.setStrV(UUID.randomUUID().toString());
         unit.setEv(HTTPCode.NOT_FOUND);
         unit.setLv(new ArrayList<>());
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < times; ++i) {
             unit.getLv().add(buildBinary());
         }
         unit.setSetV(new HashSet<>());
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < times; ++i) {
             unit.addToSetV(buildString());
         }
         unit.setMapV(new HashMap<>());
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < times; ++i) {
             unit.putToMapV(buildString(), buildBinary());
         }
         return unit;
@@ -63,7 +65,7 @@ public class ComplexIFaceClient {
         Wrapper wrapper = new Wrapper();
         wrapper.setUl(new ArrayList<>());
         wrapper.setUm(new HashMap<>());
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < times; ++i) {
             wrapper.addToUl(buildUnit());
             wrapper.putToUm(UUID.randomUUID().toString(), buildUnit());
         }
@@ -73,7 +75,7 @@ public class ComplexIFaceClient {
     static Request buildRequest() {
         Request request = new Request();
         request.setWs(new ArrayList<>());
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < times; ++i) {
             request.addToWs(buildWrapper());
         }
         return request;
@@ -82,10 +84,13 @@ public class ComplexIFaceClient {
     public static void testGet(ComplexIFaceService.Client client) throws TException {
         Request request = buildRequest();
         // Request request = new Request();
-        Response response = client.get(request);
         TSerializer serializer = new TSerializer(new TCompactProtocol.Factory());
         byte[] data = serializer.serialize(request);
         System.out.println(data.length);
+        Response response = client.get(request);
+        for (Wrapper wp: response.getMs().values()) {
+            System.out.println(serializer.serialize(wp).length);
+        }
         System.out.println(new Gson().toJson(response));
     }
 
