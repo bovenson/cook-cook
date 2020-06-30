@@ -21,7 +21,8 @@ import java.util.HashSet;
 import java.util.UUID;
 
 public class ComplexIFaceClient {
-    static int times = 5;
+    static final Gson gson = new Gson();
+    static int times = 1;
 
     static String buildString() {
         return RandomStringUtils.randomAlphanumeric(1<<10);
@@ -88,11 +89,12 @@ public class ComplexIFaceClient {
         byte[] data = serializer.serialize(request);
         System.out.println(data.length);
         Response response = client.get(request);
-        System.out.println(serializer.serialize(response.getEcho()));
-        for (Wrapper wp: response.getMs().values()) {
-            System.out.println(serializer.serialize(wp).length);
-        }
-        System.out.println(new Gson().toJson(response));
+
+        Request echoReq = new Request().setWs(response.getEcho());
+        System.out.println(serializer.serialize(echoReq).length == data.length);
+        System.out.println(gson.toJson(request).equals(response.getJsonEcho()));
+        System.out.println(gson.toJson(request));
+        System.out.println(response.getJsonEcho());
     }
 
     public static void main(String[] args) throws Exception {

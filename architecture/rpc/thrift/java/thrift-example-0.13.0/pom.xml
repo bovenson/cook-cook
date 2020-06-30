@@ -14,8 +14,8 @@
     <dependencies>
         <dependency>
             <groupId>top.szhkai</groupId>
-            <artifactId>thrift-defines_0.13.0</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <artifactId>thrift-defines</artifactId>
+            <version>1.0.0_0.13.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>top.szhkai</groupId>
