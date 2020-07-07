@@ -3,7 +3,7 @@ package top.szhkai.code.benchmark.rocksdb4j.test;
 import org.rocksdb.Options;
 import org.rocksdb.RocksDB;
 
-public class Test01 {
+public class TestBasic {
     public static void main(String[] args) {
         RocksDB.loadLibrary();
         try (final Options options = new Options().setCreateIfMissing(true)) {
