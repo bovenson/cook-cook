@@ -1,4 +1,7 @@
 **/target
+**/.project
+**/.settings
+**/.classpath
 **/.idea
 **/build
 **/cmake-build-debug
