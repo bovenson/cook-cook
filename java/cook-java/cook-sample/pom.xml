@@ -8,13 +8,13 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cook-antlr</artifactId>
-    <version>${cook.version}</version>
+
+    <artifactId>cook-sample</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>pub.wii.cook.antlr</groupId>
-            <artifactId>cook-antlr-base</artifactId>
+            <artifactId>cook-base</artifactId>
             <version>${cook.version}</version>
         </dependency>
     </dependencies>
