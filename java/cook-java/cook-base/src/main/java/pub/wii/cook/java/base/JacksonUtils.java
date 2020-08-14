@@ -13,21 +13,42 @@ import java.io.IOException;
 
 public class JacksonUtils {
     private final static SimpleModule simpleModule =
-            new SimpleModule().addSerializer(Double.class, new JsonSerializer<Double>() {
-        @Override
-        public void serialize(Double value,
-                              JsonGenerator jsonGenerator,
-                              SerializerProvider serializerProvider) throws IOException {
-            if (value == null || Double.isNaN(value) || Double.isInfinite(value)) {
-                // jsonGenerator.writeNull();
-                jsonGenerator.writeString("0.0");
-            } else {
-                jsonGenerator.writeString(String.valueOf(value));
-            }
-        }
-    });
+            new SimpleModule()
+                    .addSerializer(Double.class, new DoubleAdapter())
+                    .addSerializer(byte[].class, new ByteArrayAdapter());
     public final static ObjectMapper MAPPER = new ObjectMapper()
             .registerModule(simpleModule)
             .setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
             .setSerializationInclusion(JsonInclude.Include.NON_NULL);
+
+    private static class DoubleAdapter extends JsonSerializer<Double> {
+        @Override
+        public void serialize(Double value,
+                              JsonGenerator jgen,
+                              SerializerProvider serializerProvider) throws IOException {
+            if (value == null || Double.isNaN(value) || Double.isInfinite(value)) {
+                jgen.writeString("0.0");
+            } else {
+                jgen.writeString(String.valueOf(value));
+            }
+        }
+    }
+
+    private static class ByteArrayAdapter extends JsonSerializer<byte[]> {
+
+        @Override
+        public void serialize(byte[] bytes,
+                              JsonGenerator jgen,
+                              SerializerProvider serializerProvider) throws IOException {
+            jgen.writeStartArray();
+            for (byte b : bytes) {
+                jgen.writeNumber(unsignedToBytes(b));
+            }
+            jgen.writeEndArray();
+        }
+    }
+
+    private static int unsignedToBytes(byte b) {
+        return b & 0xFF;
+    }
 }

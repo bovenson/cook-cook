@@ -24,6 +24,7 @@ public class TestJackson {
         inner.da = 0.1;
         inner.number = Double.NaN;
         inner.o = Double.NaN;
+        inner.bts = "Hello".getBytes();
         System.out.println(GSON.toJson(inner));
         System.out.println(serialize(inner));
         System.out.println(JSON.toJSON(inner));
@@ -37,5 +38,6 @@ public class TestJackson {
         Double da;
         Number number;
         Object o;
+        byte[] bts;
     }
 }
