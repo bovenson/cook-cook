@@ -10,6 +10,7 @@ public class GsonUtils {
     public static final Gson GSON = gsonBuilder
             .registerTypeAdapter(Double.class, new DoubleAdapter())
             .registerTypeAdapter(Float.class, new FloatAdapter())
+            .registerTypeAdapter(Number.class, new NaNExcludeAdapter())
             .setExclusionStrategies(new ExclusionStrategy() {
                 @Override
                 public boolean shouldSkipField(FieldAttributes fieldAttributes) {
@@ -38,6 +39,20 @@ public class GsonUtils {
         @Override
         public JsonElement serialize(Float src, Type typeOfSrc, JsonSerializationContext context) {
             if (src == null || Float.isNaN(src) || Float.isInfinite(src)) {
+                return gson.toJsonTree(0);
+            } else {
+                return gson.toJsonTree(src);
+            }
+        }
+    }
+
+    private static class NaNExcludeAdapter implements JsonSerializer<Object> {
+        @Override
+        public JsonElement serialize(Object src, Type typeOfSrc, JsonSerializationContext context) {
+            if (src == null ||
+                    (src instanceof Double && (Double.isNaN((double) src) || Double.isInfinite((double) src))) ||
+                    (src instanceof Float && (Double.isNaN((float) src) || Double.isInfinite((float) src)))
+            ) {
                 return gson.toJsonTree(0);
             } else {
                 return gson.toJsonTree(src);

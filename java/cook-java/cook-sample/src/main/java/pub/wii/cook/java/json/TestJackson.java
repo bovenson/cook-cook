@@ -22,6 +22,8 @@ public class TestJackson {
         inner.d = 0.0;
         inner.dn = Double.NaN;
         inner.da = 0.1;
+        inner.number = Double.NaN;
+        inner.o = Double.NaN;
         System.out.println(GSON.toJson(inner));
         System.out.println(serialize(inner));
         System.out.println(JSON.toJSON(inner));
@@ -33,5 +35,7 @@ public class TestJackson {
         Double d;
         Double dn;
         Double da;
+        Number number;
+        Object o;
     }
 }
