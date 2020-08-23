@@ -1,4 +1,4 @@
-package pub.wii.cook.java.base;
+package pub.wii.cook.java.utils;
 
 import com.google.gson.*;
 
@@ -12,6 +12,7 @@ public class GsonUtils {
             .registerTypeAdapter(Float.class, new FloatAdapter())
             .registerTypeAdapter(Number.class, new NaNExcludeAdapter())
             .registerTypeAdapter(Boolean.class, new BooleanAdapter())
+            .registerTypeAdapter(boolean.class, new BooleanAdapter())
             .setExclusionStrategies(new ExclusionStrategy() {
                 @Override
                 public boolean shouldSkipField(FieldAttributes fieldAttributes) {
