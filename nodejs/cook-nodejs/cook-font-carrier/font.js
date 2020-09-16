@@ -24,3 +24,5 @@ font.setGlyph('test', {
 font.output({
     path: './output/test'
 });
+
+console.log(font.getGlyph('2').options.d);
