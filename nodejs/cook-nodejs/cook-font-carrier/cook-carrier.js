@@ -2,7 +2,7 @@ const fs = require('fs');
 const fontCarrier = require('font-carrier');
 const font = fontCarrier.create();
 const icons = [];
-const dir = 'less';
+const dir = 'src';
 
 let files = fs.readdirSync(dir);
 files.forEach(name => {
@@ -21,7 +21,7 @@ icons.map(icon => {
     let glyph = font.getGlyph([icon.name]);
     // console.log(glyph);
     console.log(glyph.get('glyphName'));
-    let opt = glyph.options;
-    console.log(opt);
+    // let opt = glyph.options;
+    // console.log(opt);
 
 })
