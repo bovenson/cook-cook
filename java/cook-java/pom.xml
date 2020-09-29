@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>pub.wii.cook.antlr</groupId>
+    <groupId>pub.wii.cook</groupId>
     <artifactId>cook-java</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -13,6 +13,7 @@
         <module>cook-antlr-base</module>
         <module>cook-sample</module>
         <module>cook-base</module>
+      <module>cook-lucene</module>
     </modules>
 
     <properties>
