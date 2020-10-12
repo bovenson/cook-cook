@@ -15,7 +15,7 @@
         <dependency>
             <groupId>pub.wii.cook.antlr</groupId>
             <artifactId>cook-base</artifactId>
-            <version>${cook.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

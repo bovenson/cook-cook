@@ -8,6 +8,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableAutoConfiguration
 public class UserServiceProviderBootstrap {
     public static void main(String[] args) {
-        SpringApplication.run(UserServiceProviderBootstrap.class);
+        try {
+            SpringApplication.run(UserServiceProviderBootstrap.class, args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

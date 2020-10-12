@@ -35,7 +35,7 @@
     <dependency>
       <groupId>pub.wii.cook</groupId>
       <artifactId>cook-base</artifactId>
-      <version>${cook.version}</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>com.codahale.metrics</groupId>

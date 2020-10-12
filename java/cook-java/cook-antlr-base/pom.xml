@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>cook-antlr-base</artifactId>
     <packaging>jar</packaging>
-    <version>${cook.version}</version>
 
     <dependencies>
         <dependency>
