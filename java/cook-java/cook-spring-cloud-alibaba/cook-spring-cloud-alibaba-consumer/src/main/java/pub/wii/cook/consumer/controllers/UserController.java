@@ -4,7 +4,6 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.thrift.TException;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import pub.wii.cook.api.UserServiceIFace;
 import pub.wii.cook.user.Request;
 import pub.wii.cook.user.UserService;
 
@@ -13,7 +12,7 @@ import pub.wii.cook.user.UserService;
 public class UserController {
 
     @DubboReference
-    private UserServiceIFace userService;
+    private UserService.Iface userService;
 
     @RequestMapping(value = "get",
             method = {RequestMethod.GET},
