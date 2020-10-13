@@ -15,17 +15,9 @@
         <module>cook-base</module>
         <module>cook-lucene</module>
         <module>cook-dubbo</module>
-<!--        <module>cook-spring-cloud-alibaba-parent</module>-->
-<!--        <module>cook-spring-cloud-alibaba-provider</module>-->
         <module>cook-spring-cloud-base</module>
         <module>cook-spring-cloud-provider</module>
         <module>cook-spring-cloud-consumer</module>
-        <module>cook-spring-cloud-alibaba-base</module>
-        <module>cook-spring-cloud-alibaba-provider</module>
-        <module>cook-spring-cloud-alibaba-consumer</module>
-        <module>cook-spring-cloud-alibaba-thrift</module>
-        <module>cook-spring-cloud-alibaba-api</module>
-        <module>cook-spring-cloud-alibaba-parent</module>
     </modules>
 
     <properties>
