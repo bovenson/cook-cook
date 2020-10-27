@@ -5,11 +5,12 @@
   <parent>
     <artifactId>cook-java</artifactId>
     <groupId>pub.wii.cook</groupId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>pub.wii.cook.lucene</groupId>
+  <groupId>pub.wii.cook</groupId>
   <artifactId>cook-lucene</artifactId>
 
   <properties>

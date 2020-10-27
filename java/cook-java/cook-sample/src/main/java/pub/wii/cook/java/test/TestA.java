@@ -7,10 +7,11 @@ public class TestA {
 
         // Number number = Double.NaN;
         // System.out.println(number);
-        String s = "HELLO";
-        System.out.println(String.valueOf(s));
-        System.out.println(s.toString());
+        // String s = "HELLO";
+        // System.out.println(String.valueOf(s));
+        // System.out.println(s.toString());
+        //
+        // System.out.println("20200811-abc".compareTo("20200711-de"));
 
-        System.out.println("20200811-abc".compareTo("20200711-de"));
     }
 }

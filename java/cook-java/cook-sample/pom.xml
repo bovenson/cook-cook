@@ -5,7 +5,8 @@
     <parent>
         <artifactId>cook-java</artifactId>
         <groupId>pub.wii.cook</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,7 +14,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>pub.wii.cook.antlr</groupId>
+            <groupId>pub.wii.cook</groupId>
             <artifactId>cook-base</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -48,6 +49,36 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
             <version>2.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ftpserver</groupId>
+            <artifactId>ftplet-api</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ftpserver</groupId>
+            <artifactId>ftpserver-core</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.6</version>
         </dependency>
     </dependencies>
 </project>
