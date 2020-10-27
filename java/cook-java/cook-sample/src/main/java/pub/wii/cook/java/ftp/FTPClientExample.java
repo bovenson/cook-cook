@@ -24,5 +24,8 @@ public class FTPClientExample {
         // FTPUtils.uploadFile(ftp, "wallpaper-212422.jpg", "/Users/wii/Pictures/4k+/wallpaper-212422.jpg");
         // FTPUtils.upload(ftp, "wallpaper-212422.jpg", "/Users/wii/Pictures/4k+/wallpaper-212422.jpg");
         FTPUtils.upload(ftp, "/", "/Users/wii/Tmp/e/ca");
+
+        // System.out.println(new Gson().toJson("ABC".split(":")));
+        // System.out.println("*** is folder: " + FTPUtils.isFile(ftp, "ca"));
     }
 }
