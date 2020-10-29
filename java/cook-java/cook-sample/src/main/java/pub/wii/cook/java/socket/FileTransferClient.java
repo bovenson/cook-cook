@@ -10,13 +10,13 @@ import java.nio.file.Paths;
 public class FileTransferClient {
     Socket socket;
     DataOutputStream dos;
-    DataInputStream din;
+    DataInputStream dis;
 
     public FileTransferClient(Socket socket) throws IOException {
         BufferedOutputStream bos = new BufferedOutputStream(socket.getOutputStream());
         this.socket = socket;
         this.dos = new DataOutputStream(bos);
-        this.din = new DataInputStream(socket.getInputStream());
+        this.dis = new DataInputStream(socket.getInputStream());
     }
 
     public void send(String path, File file) throws IOException {
@@ -27,11 +27,12 @@ public class FileTransferClient {
                 send(Paths.get(path, file.getName()).toString(), f);
             }
         } else {
+            System.out.println("Sending file: " + file.getAbsolutePath() + ", length: " + file.length());
             dos.writeUTF(GsonUtils.GSON.toJson(new FileTransferInfo().name(file.getName()).path(path)));
             dos.writeLong(file.length());
             Files.copy(file.toPath(), dos);
             dos.flush();
-            System.out.println(din.readUTF());
+            System.out.println(dis.readUTF());
         }
     }
 
@@ -39,8 +40,8 @@ public class FileTransferClient {
         FileTransferInfo info = new FileTransferInfo().type(FileTransferInfo.TYPE_CLOSE);
         dos.writeUTF(GsonUtils.GSON.toJson(info));
         dos.flush();
-        System.out.println(din.readUTF());
-        din.close();
+        System.out.println(dis.readUTF());
+        dis.close();
         dos.close();
         socket.close();
     }
@@ -49,17 +50,17 @@ public class FileTransferClient {
         FileTransferInfo info = new FileTransferInfo().path(path).type(FileTransferInfo.TYPE_DELETE);
         dos.writeUTF(GsonUtils.GSON.toJson(info));
         dos.flush();
-        System.out.println(din.readUTF());
+        System.out.println(dis.readUTF());
     }
 
     public static void main(String[] args) throws IOException {
         String host = "127.0.0.1";
         int port = 2222;
-        String path = "test";
+        String path = "receiver";
         Socket socket = new Socket(host, port);
         FileTransferClient client = new FileTransferClient(socket);
         client.delete(path);
-        client.send(path, new File("/Users/wii/Tmp/ca"));
+        client.send(path, new File("/Users/wii/Downloads"));
         client.close();
     }
 }

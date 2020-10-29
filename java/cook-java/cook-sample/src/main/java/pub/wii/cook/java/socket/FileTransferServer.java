@@ -29,6 +29,6 @@ public class FileTransferServer {
 
     public static void main(String[] args) throws Exception {
         FileTransferServer server = new FileTransferServer();
-        server.start(2222, "/Users/wii/Tmp/socket/receiver");
+        server.start(2222, "/Users/wii/Tmp");
     }
 }

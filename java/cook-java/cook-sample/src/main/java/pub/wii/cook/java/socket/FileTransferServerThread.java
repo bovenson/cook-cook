@@ -39,15 +39,17 @@ public class FileTransferServerThread extends Thread {
                     long length = dis.readLong();
 
                     Path fnl = Paths.get(wd, info.path(), info.name());
+                    System.out.println("Receiving file: " + fnl.toAbsolutePath() + ", length: " + length);
                     FileUtils.forceMkdir(Paths.get(wd, info.path()).toFile());
                     FileUtils.touch(fnl.toFile());
 
                     FileOutputStream fos = new FileOutputStream(fnl.toFile());
                     BufferedOutputStream bos = new BufferedOutputStream(fos);
-                    for (int j = 0; j < length; j++) {
+                    for (long j = 0; j < length; j++) {
                         bos.write(bis.read());
                     }
                     bos.close();
+                    System.out.println("Saved file: " + fnl.toAbsolutePath());
                 }
 
                 dot.writeUTF(FileTransferInfo.MSG_DONE);
