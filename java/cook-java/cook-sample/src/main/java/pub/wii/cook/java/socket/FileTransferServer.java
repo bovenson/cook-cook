@@ -9,13 +9,25 @@ import java.net.Socket;
 import java.nio.channels.ServerSocketChannel;
 
 public class FileTransferServer {
+    private ServerSocket ss;
+    private final int port;
+    private final String wd;
 
-    public void start(int port, String wd) throws Exception {
+    /**
+     * @param port network port for listening
+     * @param wd   working directory, files will saved into this folder
+     */
+    public FileTransferServer(int port, String wd) {
+        this.port = port;
+        this.wd = wd;
+    }
+
+    public void start() throws Exception {
         FileUtils.forceMkdir(new File(wd));
 
         InetSocketAddress listenAddr = new InetSocketAddress(port);
         ServerSocketChannel listener = ServerSocketChannel.open();
-        ServerSocket ss = listener.socket();
+        ss = listener.socket();
         ss.setReuseAddress(true);
         ss.bind(listenAddr);
 
@@ -27,8 +39,17 @@ public class FileTransferServer {
         }
     }
 
+    public void close() {
+        if (ss != null && !ss.isClosed()) {
+            try {
+                ss.close();
+            } catch (Exception ignored) {
+            }
+        }
+    }
+
     public static void main(String[] args) throws Exception {
-        FileTransferServer server = new FileTransferServer();
-        server.start(2222, "/Users/wii/Tmp");
+        FileTransferServer server = new FileTransferServer(2222, "/Users/wii/Tmp");
+        server.start();
     }
 }
