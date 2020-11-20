@@ -4,54 +4,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>pub.wii.cook</groupId>
-    <artifactId>cook-java</artifactId>
+    <groupId>pub.wii</groupId>
+    <artifactId>cook-rpc</artifactId>
     <packaging>pom</packaging>
     <version>${revision}</version>
     <modules>
-        <module>cook-antlr</module>
-        <module>cook-antlr-base</module>
-        <module>cook-sample</module>
-        <module>cook-base</module>
-        <module>cook-lucene</module>
-        <module>cook-dubbo</module>
-        <module>cook-spring-cloud-base</module>
-        <module>cook-spring-cloud-provider</module>
-        <module>cook-spring-cloud-consumer</module>
-        <module>cook-springboot</module>
+        <module>cook-rpc-api</module>
     </modules>
 
     <properties>
-        <revision>0.0.1-SNAPSHOT</revision>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <rocksdb.version>6.10.2</rocksdb.version>
-        <antlr.version>4.2</antlr.version>
-    </properties>
+        <revision>0.0.0-SNAPSHOT</revision>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.rocksdb</groupId>
-            <artifactId>rocksdbjni</artifactId>
-            <version>${rocksdb.version}</version>
-        </dependency>
-    </dependencies>
+        <!-- maven compiler plugin -->
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <file-encoding>UTF-8</file-encoding>
+        <maven-complile.version>3.2.0</maven-complile.version>
+        <maven-flatten.version>1.1.0</maven-flatten.version>
+    </properties>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>flatten-maven-plugin</artifactId>
-                <version>1.2.5</version>
+                <version>${maven-flatten.version}</version>
                 <configuration>
                     <updatePomFile>true</updatePomFile>
                     <flattenMode>resolveCiFriendliesOnly</flattenMode>
@@ -72,6 +49,21 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-complile.version}</version>
+                <configuration>
+                    <compilerArgs>
+                        <compilerArg>-proc:none</compilerArg>
+                        <compilerArg>-parameters</compilerArg>
+                    </compilerArgs>
+                    <fork>true</fork>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                    <encoding>${file-encoding}</encoding>
+                </configuration>
             </plugin>
         </plugins>
     </build>
