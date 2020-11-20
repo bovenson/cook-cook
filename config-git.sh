@@ -1,3 +1,3 @@
 #!/bin/bash
-git config user.name "bovenson"
-git config user.email "szhkai@qq.com"
+git config user.name "wii"
+git config user.email "zhenkai.sun@qq.com"
