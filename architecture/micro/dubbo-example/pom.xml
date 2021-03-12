@@ -16,7 +16,7 @@
     </modules>
 
     <properties>
-        <lib-thrift.version>0.13.0</lib-thrift.version>
+        <lib-thrift.version>0.14.0</lib-thrift.version>
     </properties>
 
     <dependencyManagement>
