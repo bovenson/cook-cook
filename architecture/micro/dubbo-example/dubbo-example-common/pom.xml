@@ -13,7 +13,7 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
-        <lib-thrift.version>0.13.0</lib-thrift.version>
+        <lib-thrift.version>0.14.0</lib-thrift.version>
     </properties>
 
     <dependencies>
